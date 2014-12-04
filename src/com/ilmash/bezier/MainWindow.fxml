@@ -7,12 +7,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
-<VBox minHeight="130.0" minWidth="160.0" prefHeight="330.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ilmash.bezier.Controller">
+<VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="130.0" minWidth="160.0" prefHeight="330.0" prefWidth="500.0"
+      xmlns="http://javafx.com/javafx/8" fx:controller="com.ilmash.bezier.MainController">
     <children>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: gray;">
             <children>
                 <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#buttonAction" text="click me" textAlignment="CENTER" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0" />
-                <Label fx:id="label" alignment="CENTER" layoutX="104.0" layoutY="1.0" onMouseClicked="#closeapp" prefHeight="27.0" prefWidth="50.0" text="label 1" />
+                <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#openDialog" text="click me"
+                        textAlignment="CENTER" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="150.0"
+                        AnchorPane.topAnchor="3.0"/>
+                <Label fx:id="label" alignment="CENTER" layoutX="100.0" layoutY="1.0" onMouseClicked="#closeapp"
+                       prefHeight="27.0" prefWidth="50.0" text="label 1"/>
             </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
@@ -23,19 +28,21 @@
                 <Line fx:id="pilot_middle" endX="375.0" endY="50.0" startX="125.0" startY="50.0" />
                 <Line fx:id="pilot_right" endX="425.0" endY="250.0" startX="375.0" startY="50.0" />
                 <Circle centerX="75.0" centerY="250.0" fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-                <Circle centerX="125.0" centerY="50.0" fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-                <Circle centerX="375.0" centerY="50.0" fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <Circle centerX="425.0" centerY="250.0" fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                <Circle fx:id="circle_HLeft" centerX="375.0" centerY="50.0" fill="DODGERBLUE" radius="5.0"
+                        stroke="BLACK" strokeType="INSIDE"/>
+                <Circle fx:id="circle_HRight" centerX="425.0" centerY="250.0" fill="DODGERBLUE" radius="5.0"
+                        stroke="BLACK" strokeType="INSIDE"/>
                 <!--skeleton end-->
 
                 <!--moving arms, M stands for MovingArm-->
-                <Line fx:id="left_arm" endX="375.0" endY="50.0" startX="125.0" startY="50.0" stroke="#058000"/>
-                <Line fx:id="right_arm" endX="425.0" endY="250.0" startX="375.0" startY="50.0" stroke="#058000"/>
+                <Line fx:id="left_arm" endX="125.0" endY="50.0" startX="75.0" startY="250.0" stroke="#058000"/>
+                <Line fx:id="right_arm" endX="375.0" endY="50.0" startX="125.0" startY="50.0" stroke="#058000"/>
                 <Circle fx:id="circle_M1" centerX="75.0" centerY="250.0" fill="#058000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <Circle fx:id="circle_M2" centerX="125.0" centerY="50.0" fill="#058000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <Circle fx:id="circle_M3" centerX="375.0" centerY="50.0" fill="#058000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <!--now, testing-->
-                <Line fx:id="pen_track" endX="425.0" endY="250.0" startX="375.0" startY="50.0" stroke="BLACK"/>
+                <Line fx:id="pen_track" endX="125.0" endY="50.0" startX="75.0" startY="250.0" stroke="BLACK"/>
                 <Circle fx:id="circle_D1" centerX="75.0" centerY="250.0" fill="#ff0000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <Circle fx:id="circle_D2" centerX="125.0" centerY="50.0" fill="#ff0000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
                 <Circle fx:id="circle_D3" centerX="125.0" centerY="50.0" fill="#ff0000" radius="5.0" stroke="BLACK" strokeType="INSIDE" />

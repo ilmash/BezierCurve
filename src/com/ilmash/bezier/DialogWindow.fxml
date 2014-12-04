@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="5.0" xmlns="http://javafx.com/javafx/8"
+      fx:controller="com.ilmash.bezier.DialogController">
+    <Button fx:id="button" contentDisplay="TOP" mnemonicParsing="false" onAction="#buttonAction" text="Save options"
+            textAlignment="CENTER"/>
+    <HBox>
+        <Label prefHeight="25.0" text="Duration">
+            <HBox.margin>
+                <Insets left="5.0"/>
+            </HBox.margin>
+        </Label>
+        <TextField fx:id="duration" prefHeight="25.0">
+            <HBox.margin>
+                <Insets left="5.0"/>
+            </HBox.margin>
+        </TextField>
+    </HBox>
+</VBox>

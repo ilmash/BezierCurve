@@ -7,17 +7,22 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private static Stage mainStage;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Bezier Curve");
-        primaryStage.setScene(new Scene(root, 500, 330));
-        primaryStage.show();
+    public static Stage getMainStage() {
+        return mainStage;
     }
-
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        mainStage = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+        primaryStage.setTitle("Bezier Curve");
+        primaryStage.setScene(new Scene(root, 500, 330));
+        primaryStage.show();
     }
 }
